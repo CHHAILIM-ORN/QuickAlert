@@ -51,11 +51,18 @@ class _MyHomePageState extends State<MyHomePage> {
         QuickAlert.show(
           context: context,
           type: QuickAlertType.error,
-          title: 'Oops...',
-          text: 'Sorry, something went wrong',
-          backgroundColor: Colors.black,
-          titleColor: Colors.white,
-          textColor: Colors.white,
+          text: 'មិនត្រឹមត្រូវទេ!',
+          title: "",
+          backgroundColor: Colors.white,
+          titleColor: Colors.red,
+          textColor: Colors.red,
+          headerBackgroundColor: Colors.red,
+          confirmBtnColor: Colors.red,
+          confirmBtnTextStyle: const TextStyle(
+            fontSize: 25,
+            color: Colors.red,
+          ),
+          confirmBtnText: "ព្យាយាមម្តងទៀត",
         );
       },
       title: 'Error',

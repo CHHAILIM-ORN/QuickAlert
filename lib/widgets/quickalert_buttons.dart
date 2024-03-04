@@ -79,11 +79,13 @@ class QuickAlertButtons extends StatelessWidget {
 
     final okayBtn = MaterialButton(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
+        borderRadius: BorderRadius.circular(50.0),
+        side: BorderSide(color: options!.confirmBtnColor ?? Theme.of(context!).primaryColor),
       ),
+
       height: 70,
       minWidth: MediaQuery.of(context!).size.width * .6,
-      color: options!.confirmBtnColor ?? Theme.of(context).primaryColor,
+      // color: options!.confirmBtnColor ?? Theme.of(context).primaryColor,
       onPressed: onTap,
       child: Center(
         child: Padding(
@@ -105,9 +107,9 @@ class QuickAlertButtons extends StatelessWidget {
 
   TextStyle defaultTextStyle(bool isOkayBtn) {
     final textStyle = TextStyle(
-      color: isOkayBtn ? Colors.white : Colors.grey,
+      color: isOkayBtn ? Colors.red : Colors.grey,
       fontWeight: FontWeight.w600,
-      fontSize: 18.0,
+      fontSize: 30.0,
     );
 
     if (isOkayBtn) {

@@ -34,7 +34,10 @@ class QuickAlertContainer extends StatelessWidget {
           const SizedBox(
             height: 70.0,
           ),
-          buttons
+          buttons,
+          const SizedBox(
+            height: 30.0,
+          ),
         ],
       ),
     );
