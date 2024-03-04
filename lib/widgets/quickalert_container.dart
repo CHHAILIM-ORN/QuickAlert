@@ -27,12 +27,12 @@ class QuickAlertContainer extends StatelessWidget {
         children: [
           title,
           const SizedBox(
-            height: 5.0,
+            height: 50.0,
           ),
           text,
           widget!,
           const SizedBox(
-            height: 10.0,
+            height: 70.0,
           ),
           buttons
         ],
@@ -127,6 +127,7 @@ class QuickAlertContainer extends StatelessWidget {
         textAlign: options!.textAlignment ?? TextAlign.center,
         style: TextStyle(
           color: options!.textColor,
+          fontSize: 50,
         ),
       );
     }

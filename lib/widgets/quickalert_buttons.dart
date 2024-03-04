@@ -14,6 +14,7 @@ class QuickAlertButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 10.0),
+      width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -28,9 +29,7 @@ class QuickAlertButtons extends StatelessWidget {
     if (!options!.showConfirmBtn!) {
       return const SizedBox();
     }
-    final showCancelBtn = options!.type == QuickAlertType.confirm
-        ? true
-        : options!.showCancelBtn!;
+    final showCancelBtn = options!.type == QuickAlertType.confirm ? true : options!.showCancelBtn!;
 
     final okayBtn = buildButton(
         context: context,
@@ -38,9 +37,7 @@ class QuickAlertButtons extends StatelessWidget {
         text: options!.confirmBtnText!,
         onTap: () {
           options!.timer?.cancel();
-          options!.onConfirmBtnTap != null
-              ? options!.onConfirmBtnTap!()
-              : Navigator.pop(context);
+          options!.onConfirmBtnTap != null ? options!.onConfirmBtnTap!() : Navigator.pop(context);
         });
 
     if (showCancelBtn) {
@@ -51,9 +48,7 @@ class QuickAlertButtons extends StatelessWidget {
   }
 
   Widget cancelBtn(context) {
-    final showCancelBtn = options!.type == QuickAlertType.confirm
-        ? true
-        : options!.showCancelBtn!;
+    final showCancelBtn = options!.type == QuickAlertType.confirm ? true : options!.showCancelBtn!;
 
     final cancelBtn = buildButton(
         context: context,
@@ -61,9 +56,7 @@ class QuickAlertButtons extends StatelessWidget {
         text: options!.cancelBtnText!,
         onTap: () {
           options!.timer?.cancel();
-          options!.onCancelBtnTap != null
-              ? options!.onCancelBtnTap!()
-              : Navigator.pop(context);
+          options!.onCancelBtnTap != null ? options!.onCancelBtnTap!() : Navigator.pop(context);
         });
 
     if (showCancelBtn) {
@@ -88,7 +81,9 @@ class QuickAlertButtons extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
-      color: options!.confirmBtnColor ?? Theme.of(context!).primaryColor,
+      height: 70,
+      minWidth: MediaQuery.of(context!).size.width * .6,
+      color: options!.confirmBtnColor ?? Theme.of(context).primaryColor,
       onPressed: onTap,
       child: Center(
         child: Padding(
