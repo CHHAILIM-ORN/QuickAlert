@@ -82,7 +82,7 @@ class QuickAlertButtons extends StatelessWidget {
         borderRadius: BorderRadius.circular(50.0),
         side: BorderSide(color: options!.confirmBtnColor ?? Theme.of(context!).primaryColor),
       ),
-      height: 70,
+      height: 100,
       minWidth: MediaQuery.of(context!).size.width * .6,
       color: options!.confirmBtnColor ?? Theme.of(context).primaryColor,
       onPressed: onTap,

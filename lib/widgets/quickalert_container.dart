@@ -24,7 +24,7 @@ class QuickAlertContainer extends StatelessWidget {
       children: [
         Image.asset(
           "packages/quickalert/assets/UIIPADBG.png",
-          height: 350,
+          height: 450,
           width: double.infinity,
           fit: BoxFit.cover,
         ),
@@ -32,14 +32,10 @@ class QuickAlertContainer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             title,
-            const SizedBox(
-              height: 50.0,
-            ),
+            const SizedBox(height: 100.0),
             text,
             widget!,
-            const SizedBox(
-              height: 70.0,
-            ),
+            const SizedBox(height: 100.0),
             buttons,
             const SizedBox(
               height: 30.0,
