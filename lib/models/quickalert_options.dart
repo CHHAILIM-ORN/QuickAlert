@@ -51,6 +51,8 @@ class QuickAlertOptions {
   /// TextStyle for cancel button
   TextStyle? cancelBtnTextStyle;
 
+  TextStyle? titleTextStyle;
+
   /// Backgroung Color for dialog
   Color? backgroundColor;
 

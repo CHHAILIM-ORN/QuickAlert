@@ -60,7 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
           confirmBtnColor: Colors.red,
           confirmBtnTextStyle: const TextStyle(
             fontSize: 25,
-            color: Colors.red,
+            color: Colors.white,
+            fontFamily: "KhmerOSContentBold",
           ),
           confirmBtnText: "ព្យាយាមម្តងទៀត",
         );

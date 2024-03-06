@@ -20,26 +20,33 @@ class QuickAlertContainer extends StatelessWidget {
     final buttons = buildButtons();
     final widget = buildWidget(context);
 
-    final content = Container(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          title,
-          const SizedBox(
-            height: 50.0,
-          ),
-          text,
-          widget!,
-          const SizedBox(
-            height: 70.0,
-          ),
-          buttons,
-          const SizedBox(
-            height: 30.0,
-          ),
-        ],
-      ),
+    final content = Stack(
+      children: [
+        Image.asset(
+          "packages/quickalert/assets/UIIPADBG.png",
+          height: 350,
+          width: double.infinity,
+          fit: BoxFit.cover,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            title,
+            const SizedBox(
+              height: 50.0,
+            ),
+            text,
+            widget!,
+            const SizedBox(
+              height: 70.0,
+            ),
+            buttons,
+            const SizedBox(
+              height: 30.0,
+            ),
+          ],
+        ),
+      ],
     );
 
     return Container(
@@ -106,11 +113,7 @@ class QuickAlertContainer extends StatelessWidget {
       child: Text(
         '$title',
         textAlign: options!.titleAlignment ?? TextAlign.center,
-        style: TextStyle(
-          color: options!.titleColor,
-        ).merge(
-          Theme.of(context).textTheme.headlineSmall,
-        ),
+        style: options!.titleTextStyle,
       ),
     );
   }
