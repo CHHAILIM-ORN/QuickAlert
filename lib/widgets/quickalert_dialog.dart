@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:quickalert/models/quickalert_animtype.dart';
 import 'package:quickalert/models/quickalert_options.dart';
@@ -57,6 +58,7 @@ class QuickAlert {
 
     /// TextStyle for cancel button
     TextStyle? cancelBtnTextStyle,
+    TextStyle? titleTextStyle,
 
     /// Background Color for dialog
     Color backgroundColor = Colors.white,
@@ -109,6 +111,7 @@ class QuickAlert {
       textAlignment: textAlignment,
       widget: widget,
       type: type,
+      titleTextStyle: titleTextStyle,
       animType: animType,
       barrierDismissible: barrierDismissible,
       onConfirmBtnTap: onConfirmBtnTap,
@@ -128,7 +131,7 @@ class QuickAlert {
       customAsset: customAsset,
       width: width,
     );
-    
+
     final child = WillPopScope(
       onWillPop: () => Future.value(!disableBackBtn),
       child: AlertDialog(
@@ -169,8 +172,7 @@ class QuickAlert {
         }
       },
       transitionDuration: const Duration(milliseconds: 200),
-      barrierDismissible:
-          autoCloseDuration != null ? false : barrierDismissible,
+      barrierDismissible: autoCloseDuration != null ? false : barrierDismissible,
       barrierLabel: '',
       context: context,
       pageBuilder: (context, _, __) => Container(),

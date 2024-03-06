@@ -126,6 +126,7 @@ class QuickAlertOptions {
 
     /// TextStyle for confirm button
     this.confirmBtnTextStyle,
+    this.titleTextStyle,
 
     /// TextStyle for cancel button
     this.cancelBtnTextStyle,
